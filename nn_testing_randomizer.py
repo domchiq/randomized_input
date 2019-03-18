@@ -36,7 +36,7 @@ model.add(tf.keras.layers.Dense(3000, activation=tf.nn.relu))#, input_shape=(28,
 model.add(tf.keras.layers.Dense(2000, activation=tf.nn.relu))
 model.add(tf.keras.layers.Dense(1000, activation=tf.nn.relu))
 model.compile(optimizer='adadelta', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
-model.fit(x_set/255, y_set, epochs=10)
+model.fit(x_set, y_set, epochs=10)
 
 test_loss, test_acc = model.evaluate(x_test, y_test)
 print('Test loss:', test_loss)
